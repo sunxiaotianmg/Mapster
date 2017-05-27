@@ -44,3 +44,24 @@ If you would like to change case from POCO to `IDictionary<string, T>` to camelC
         .NameMatchingStrategy(NameMatchingStrategy.FromCamelCase);
 
 NOTE: mapping from `IDictionary<string, T>` to POCO, you can also use `Flexible` or `IgnoreCase`, but both will be slower since it will scan through dictionary entries rather than lookup.
+
+### Rule based Naming
+
+You can change name based on rule by `GetMemberName` method. For example, if we would like to rename property based on `JsonProperty` attribute.
+
+    TypeAdapterConfig.GlobalSettings.Default
+        .GetMemberName(member => member.GetCustomAttributes(true)
+                                       .OfType<JsonPropertyAttribute>()
+                                       .FirstOrDefault()?.PropertyName);  //if return null, property will not be renamed
+
+Then in your class
+
+    public class Poco 
+    {
+        [JsonProperty("code")]
+        public string Id { get; set; }
+
+        ...
+    }
+
+With above config, `Id` will be mapped to `code`.
