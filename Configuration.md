@@ -67,6 +67,13 @@ In this example, the config would only apply to Query Expressions (projections).
     TypeAdapterConfig.GlobalSettings.When((srcType, destType, mapType) => mapType == MapType.Projection)
         .IgnoreAttribute(typeof(NotMapAttribute));
 
+### Destination type only
+
+Setting also be able to done without knowing the source type, by using `ForDestinationType`. For example, you can do `AfterMapping` setting to validate after mapping.
+
+    TypeAdapterConfig.GlobalSettings.ForDestinationType<IValidator>()
+                     .AfterMapping(dest => dest.Validate());
+
 ### Open generics
 
 If mapping type is generic, you can create setting by passing generic type definition to `ForType`.
