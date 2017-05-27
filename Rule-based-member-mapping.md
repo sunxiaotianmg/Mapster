@@ -47,10 +47,10 @@ If you would like to include all members decorated with DataMember attribute, an
     TypeAdapterConfig.GlobalSettings.Default
         .IgnoreMember((member, side) => !member.GetCustomAttributes(true).OfType<DataMemberAttribute>().Any());
 
-### Allow non-public setters
+### Turn-off non-public setters
 
-Mapster 3.0 required you to make explicit mapping in order to map to non-public setters. But you can override by:
+Mapster always allows non-public setters. But you can override by:
 
     TypeAdapterConfig.GlobalSettings.Default
-        .IncludeMember((member, side) => side == MemberSide.Destination
-                                         && member.SetterModifier != AccessModifier.None); //allow all except no setter
+        .IgnoreMember((member, side) => side == MemberSide.Destination
+                                         && member.SetterModifier != AccessModifier.Public);
