@@ -74,6 +74,8 @@ Setting also be able to done without knowing the source type, by using `ForDesti
     TypeAdapterConfig.GlobalSettings.ForDestinationType<IValidator>()
                      .AfterMapping(dest => dest.Validate());
 
+NOTE: `ForDestinationType` above will always apply to all types assignable to `IValidator`. If destination class implements `IValidator`, it will also apply the `AfterMapping` config.
+
 ### Open generics
 
 If mapping type is generic, you can create setting by passing generic type definition to `ForType`.
