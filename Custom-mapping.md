@@ -25,7 +25,7 @@ If the condition is not met, Mapster will retry with next conditions. Default co
         .Map(dest => dest.FullName, src => "Sr. " + src.FullName, srcCond => srcCond.Country == "Spain")
         .Map(dest => dest.FullName, src => "Mr. " + src.FullName);
 
-NOTE: if you would like to skip mapping, when condition is met, you can use `IgnoreIf` (https://github.com/chaowlert/Mapster/wiki/Ignoring-members#ignore-conditionally).
+NOTE: if you would like to skip mapping, when condition is met, you can use `IgnoreIf` (https://github.com/MapsterMapper/Mapster/wiki/Ignoring-members#ignore-conditionally).
 
 ### Mapping to non-public members
 
@@ -35,4 +35,4 @@ NOTE: if you would like to skip mapping, when condition is met, you can use `Ign
         .NewConfig()
         .Map("PrivateDestName", "PrivateSrcName");
 
-For more information about mapping non-public members, please see https://github.com/chaowlert/Mapster/wiki/Mapping-non-public-members.
+For more information about mapping non-public members, please see https://github.com/MapsterMapper/Mapster/wiki/Mapping-non-public-members.

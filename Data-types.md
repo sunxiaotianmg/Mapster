@@ -59,11 +59,11 @@ Example:
     //dto.Name = staff.Name, dto.Age = staff.GetAge(), dto.SupervisorName = staff.Supervisor.Name
 
 You can make custom mapping logic by
-- Setting custom mapping (https://github.com/chaowlert/Mapster/wiki/Custom-mapping)
-- Setting custom naming convention (https://github.com/chaowlert/Mapster/wiki/Naming-convention)
-- Setting by attributes (https://github.com/chaowlert/Mapster/wiki/Setting-by-attributes)
-- Ignoring members (https://github.com/chaowlert/Mapster/wiki/Ignoring-members)
-- Setting rule based mapping (https://github.com/chaowlert/Mapster/wiki/Rule-based-member-mapping)
+- Setting custom mapping (https://github.com/MapsterMapper/Mapster/wiki/Custom-mapping)
+- Setting custom naming convention (https://github.com/MapsterMapper/Mapster/wiki/Naming-convention)
+- Setting by attributes (https://github.com/MapsterMapper/Mapster/wiki/Setting-by-attributes)
+- Ignoring members (https://github.com/MapsterMapper/Mapster/wiki/Ignoring-members)
+- Setting rule based mapping (https://github.com/MapsterMapper/Mapster/wiki/Rule-based-member-mapping)
 
 Mappable Object types are included:
 - POCO classes

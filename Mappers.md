@@ -20,7 +20,7 @@ var dto = poco.BuildAdapter()
               .AdaptToType<SimpleDto>();
 ```
 
-Or we can see how Mapster generate mapping logic with Debugger plugin (https://github.com/chaowlert/Mapster/wiki/Debugging).
+Or we can see how Mapster generate mapping logic with Debugger plugin (https://github.com/MapsterMapper/Mapster/wiki/Debugging).
 
 ```
 var script = poco.BuildAdapter()
@@ -28,7 +28,7 @@ var script = poco.BuildAdapter()
                 .ToScript();
 ```
 
-Or we can map to EF6 object context (https://github.com/chaowlert/Mapster/wiki/EF6).
+Or we can map to EF6 object context (https://github.com/MapsterMapper/Mapster/wiki/EF6).
 
 ```
 var poco = dto.BuildAdapter()

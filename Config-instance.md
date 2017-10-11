@@ -38,7 +38,7 @@ Or clone from existing configuration instance
 
 ### Fork
 
-`Fork` is similar to `Clone`, but `Fork` will allow you to keep configuration and mapping in the same location. See (https://github.com/chaowlert/Mapster/wiki/Config-location) for more info.
+`Fork` is similar to `Clone`, but `Fork` will allow you to keep configuration and mapping in the same location. See (https://github.com/MapsterMapper/Mapster/wiki/Config-location) for more info.
 
     var forked = mainConfig.Fork(config => 
         config.ForType<Poco, Dto>()
