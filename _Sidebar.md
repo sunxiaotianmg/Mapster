@@ -29,3 +29,4 @@
 ##### Plugins
 * [Debugging](https://github.com/MapsterMapper/Mapster/wiki/Debugging)
 * [EF6](https://github.com/MapsterMapper/Mapster/wiki/EF6)
+* [Json.net](https://github.com/MapsterMapper/Mapster/wiki/Json.net)
