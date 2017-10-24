@@ -16,14 +16,14 @@ or anything else that provides an object of the expected type.
 ### After mapping action
 
 You can perform actions after each mapping by using `AfterMapping` method. For instance, you might would like to validate object after each mapping.
-
 ```csharp
-    TypeAdapterConfig<Foo, Bar>.ForType().AfterMapping((src, dest) => dest.Validate());
+// test
+TypeAdapterConfig<Foo, Bar>.ForType().AfterMapping((src, dest) => dest.Validate());
 ```
 
 Or you can set for all mappings to types which implemented a specific interface by using `ForDestinationType` method.
 
 ```csharp
     TypeAdapterConfig.GlobalSettings.ForDestinationType<IValidatable>()
-                                .AfterMapping(dest => dest.Validate());
+        .AfterMapping(dest => dest.Validate());
 ```
