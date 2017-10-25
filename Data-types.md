@@ -73,7 +73,7 @@ Mappable Object types are included:
 
 Example for object to dictionary
 
-```
+```csharp
 var point = new { X = 2, Y = 3 };
 var dict = src.Adapt<Dictionary<string, int>>();
 dict["Y"].ShouldBe(3);
@@ -81,7 +81,7 @@ dict["Y"].ShouldBe(3);
 
 Example for record types
 	
-```
+```csharp
 class Person {
     public string Name { get; }
     public int Age { get; }
