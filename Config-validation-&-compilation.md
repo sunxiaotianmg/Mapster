@@ -25,3 +25,23 @@ Both a specific TypeAdapterConfig<Source, Destination> or all current configurat
     TypeAdapterConfig<Source, Destination>.NewConfig();
     TypeAdapterConfig<Source2, Destination2>.NewConfig();
     TypeAdapterConfig.GlobalSettings.Compile();
+
+### Config Compilation
+Mapster will automatically compile mapping for first time usage.
+
+    var result = poco.Adapt<Dto>();
+
+However, you can explicitly compile mapping by `Compile` method.
+
+    //Global config
+    TypeAdapterConfig.GlobalSettings.Compile();
+    
+    //Config instance
+    var config = new TypeAdapterConfig();
+    config.Compile();
+
+After compile, when you change setting in config, it will generate errors. Therefore, make sure you finish configuration before calling `Compile`. 
+
+Calling `Compile` method on start up has following benefits.
+1. **Validate mapping**: as describe in previous section, `Compile` method helps you validate mapping. Calling on start up, help you detect problem on start-up time, not on run-time.
+2. **Prevent compilation error on runtime**: Mapster is thread-safe for `Adapt` method after compilation. But not before compilation. In some corner case, you might got compilation error when calling `Adapt` method concurrently with `TypeAdapterConfig` setup.
