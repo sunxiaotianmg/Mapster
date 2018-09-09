@@ -10,7 +10,7 @@
 * [Config inheritance](https://github.com/MapsterMapper/Mapster/wiki/Config-inheritance)
 * [Config instance](https://github.com/MapsterMapper/Mapster/wiki/Config-instance)
 * [Config location](https://github.com/MapsterMapper/Mapster/wiki/Config-location)
-* [Config validation](https://github.com/MapsterMapper/Mapster/wiki/Config-validation)
+* [Config validation & compilation](https://github.com/MapsterMapper/Mapster/wiki/Config-validation-&-compilation)
 * [Config for nested classes](https://github.com/MapsterMapper/Mapster/wiki/Config-for-nested-classes)
 
 ##### Settings
