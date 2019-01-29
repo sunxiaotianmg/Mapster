@@ -18,7 +18,7 @@ Now on your mapping code.
 
 ##### Using internal classes or members
 
-`private` and `protected` don't allow in debug mode.
+`private`, `protected` and `internal` don't allow in debug mode.
 
 ### Get mapping script
 
