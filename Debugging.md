@@ -13,7 +13,7 @@ Then add following code on start up (or anywhere before mapping is compiled)
 
 Now on your mapping code (only in `DEBUG` mode).
 
-    var dto = poco.Adapt<SimplePoco, SimpleDto>(); <--- you will step-into this function!!
+    var dto = poco.Adapt<SimplePoco, SimpleDto>(); <--- you can step-into this function!!
 
 ![image](https://cloud.githubusercontent.com/assets/5763993/26521773/180427b6-431b-11e7-9188-10c01fa5ba5c.png)
 
@@ -35,6 +35,7 @@ var script = poco.BuildAdapter()
 To step-into debugging, you might need to emit file
 ```CSharp
 var opt = new ExpressionCompilationOptions { IsRelease = !Debugger.IsAttached, EmitFile = true };
-var func = lambda.CompileWithDebugInfo(opt);
-func(); //<-- you can step-into this function!!
+TypeAdapterConfig.GlobalSettings.Compiler = exp => exp.CompileWithDebugInfo(opt);
+...
+var dto = poco.Adapt<SimplePoco, SimpleDto>(); //<-- you can step-into this function!!
 ```
