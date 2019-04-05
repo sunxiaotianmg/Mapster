@@ -20,7 +20,7 @@ You can ignore members annotated with any attributes by using the `IgnoreAttribu
         .IgnoreAttribute(typeof(JsonIgnoreAttribute));
 
 ### AdaptMember attribute
-
+**Map to different name**  
 With `AdaptMember` attribute, you can specify name of source or target to be mapped. For example, if we would like to map `Id` to `Code`.
 
 ```
@@ -31,8 +31,8 @@ public class Product {
 }
 ```
 
+**Map to non-public members**  
 You can also map non-public members with `AdaptMember` attribute.
-
 ```
 public class Product {
     [AdaptMember]
