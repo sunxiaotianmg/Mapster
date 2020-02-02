@@ -9,17 +9,17 @@
 | `query.ProjectToType<Dest>()` | Mapping from queryable     | [basic](https://github.com/MapsterMapper/Mapster/wiki/Basic-usages) |
 | | Convention & Data type support | [data types](https://github.com/MapsterMapper/Mapster/wiki/Data-types) |
 
-### Mapper instance
+#### Mapper instance
 | Method        | Description           | Link  |
 | ------------- |-----------------------| ----- |
-| `IAdapter adapter = new Adapter()`     | Create mapper instance | [mappers](https://github.com/MapsterMapper/Mapster/wiki/Mappers) |
-| `adapter.Adapt<Dest>(src)`     | Mapping to new type |  |
-| `adapter.Adapt(src, dest)`       | Mapping to existing object      |  |
+| `IMapper mapper = new Mapper()`     | Create mapper instance | [mappers](https://github.com/MapsterMapper/Mapster/wiki/Mappers) |
+| `mapper.Map<Dest>(src)`     | Mapping to new type |  |
+| `mapper.Map(src, dest)`       | Mapping to existing object      |  |
 
 #### Builder
 | Method        | Description           | Link  |
 | ------------- |-----------------------| ----- |
-| `src.BuildAdapter()`     | Create builder | [mappers](https://github.com/MapsterMapper/Mapster/wiki/Mappers) |
+| `src.BuildAdapter()` <br> `mapper.From(src)`     | Create builder | [mappers](https://github.com/MapsterMapper/Mapster/wiki/Mappers) |
 | `.ForkConfig(config => ...)`     | Inline configuration | [config location](https://github.com/MapsterMapper/Mapster/wiki/Config-location) |
 | `.AddParameters(name, value)`       | Passing runtime value      | [setting values](https://github.com/MapsterMapper/Mapster/wiki/Setting-values) |
 | `.AdaptToType<Dest>()`     | Mapping to new type |  |
@@ -34,7 +34,7 @@
 | `TypeAdapterConfig.GlobalSettings` | Global config | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
 | `var config = new TypeAdapterConfig()` | Create new config instance | [config instance](https://github.com/MapsterMapper/Mapster/wiki/Config-instance) |
 | `src.Adapt<Dest>(config)` | Passing config to mapping |  |
-| `new Adapter(config)` | Passing config to mapper instance | |
+| `new Mapper(config)` | Passing config to mapper instance | |
 | `src.BuildAdapter(config)` | Passing config to builder |  |
 | `config.RequireDestinationMemberSource` | Validate all properties are mapped | [config validation](https://github.com/MapsterMapper/Mapster/wiki/Config-validation-&-compilation) |
 | `config.RequireExplicitMapping` | Validate all type pairs are defined | [config validation](https://github.com/MapsterMapper/Mapster/wiki/Config-validation-&-compilation) |
@@ -59,11 +59,9 @@
 | Method        | Description           | Link  |
 | ------------- |-----------------------| ----- |
 | `config.Default` | Get setting applied to all type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
-| `TypeAdapterConfig<Src, Dest>.NewConfig()` | Create setting applied to specific type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
-| `config.NewConfig<Src, Dest>()` | Create setting applied to specific type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
-| `TypeAdapterConfig<Src, Dest>.ForType()` | Get setting applied to specific type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
-| `config.ForType<Src, Dest>()` | Get setting applied to specific type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
-| `config.ForType(typeof(GenericPoco<>), typeof(GenericDto<>))` | Get setting applied to generic type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
+| `TypeAdapterConfig<Src, Dest>.NewConfig()` <br> `config.NewConfig<Src, Dest>()` | Create setting applied to specific type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
+| `TypeAdapterConfig<Src, Dest>.ForType()` <br> `config.ForType<Src, Dest>()` | Get setting applied to specific type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
+| `config.ForType(typeof(GenericPoco<>),typeof(GenericDto<>))` | Get setting applied to generic type pairs | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
 | `config.When((src, dest, mapType) => ...)` | Get setting that applied conditionally | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
 | `config.ForDestinationType<Dest>()` | Get setting that applied to specific destination type | [config](https://github.com/MapsterMapper/Mapster/wiki/Configuration) |
 |  | Configuration for nested mapping | [nested mapping](https://github.com/MapsterMapper/Mapster/wiki/Config-for-nested-mapping)
@@ -99,10 +97,24 @@
 | `ShallowCopyForSameType` | Direct assign rather than deep clone if type pairs are the same |  | [shallow & merge](https://github.com/MapsterMapper/Mapster/wiki/Shallow-merge) |
 | `TwoWays` | Define type mapping are 2 ways | x | [2-ways & unflattening](https://github.com/MapsterMapper/Mapster/wiki/Two-ways) |
 | `Unflattening` | Allow unflatten mapping | x |[2-ways & unflattening](https://github.com/MapsterMapper/Mapster/wiki/Two-ways) |
+| `UseDestinationValue` | Use existing property object to map data |  |[readonly-prop](https://github.com/MapsterMapper/Mapster/wiki/Mapping-readonly-prop) |
 
 #### Attributes
 
 | Annotation        | Description           | Link  |
 | ------------- |-----------------------| ----- |
 | `[AdaptMember(name)]` | Mapping property to different name | [attribute](https://github.com/MapsterMapper/Mapster/wiki/Setting-by-attributes) |
-| `[AdaptIgnore]` | Ignore property from mapping | [attribute](https://github.com/MapsterMapper/Mapster/wiki/Setting-by-attributes) |
+| `[AdaptIgnore(side)]` | Ignore property from mapping | [attribute](https://github.com/MapsterMapper/Mapster/wiki/Setting-by-attributes) |
+| `[UseDestinationValue]` | Use existing property object to map data | [attribute](https://github.com/MapsterMapper/Mapster/wiki/Setting-by-attributes) |
+
+#### Plugins
+
+| Plugin | Method        | Description           | Link  |
+| ------ | ------------- |-----------------------| ----- |
+| Async | `setting.AfterMappingAsync` <br> `builder.AdaptToTypeAsync` | perform async operation on mapping | [async](https://github.com/MapsterMapper/Mapster/wiki/Async) |
+| Codegen | `builder.CreateMapExpression<DTO>().ToScript()` | generate mapping code | [codegen](https://github.com/MapsterMapper/Mapster/wiki/CodeGen), [debugging](https://github.com/MapsterMapper/Mapster/wiki/Debugging) |
+| Debugging | `config.Compiler = exp => exp.CompileWithDebugInfo()` | compile to allow step into debugging | [debugging](https://github.com/MapsterMapper/Mapster/wiki/Debugging) |
+| Dependency Injection | `MapContext.Current.GetService<IService>()` | Inject service into mapping logic | [injection](https://github.com/MapsterMapper/Mapster/wiki/Dependency-Injection) |
+| EF 6 & EF Core | `builder.EntityFromContext` | Copy data to tracked EF entity | [ef](https://github.com/MapsterMapper/Mapster/wiki/EF-6-&-EF-Core) |
+| FastExpressionCompiler | `config.Compiler = exp => exp.CompileFast()` | compile using FastExpressionCompiler | [fec](https://github.com/MapsterMapper/Mapster/wiki/FastExpressionCompiler) |
+| Json.net | `config.EnableJsonMapping()` | map json from/to poco and string | [json](https://github.com/MapsterMapper/Mapster/wiki/Json.net) |
