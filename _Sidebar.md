@@ -31,6 +31,7 @@
 * [Recursive & object references](https://github.com/MapsterMapper/Mapster/wiki/Object-references)
 * [Custom conversion logic](https://github.com/MapsterMapper/Mapster/wiki/Custom-conversion-logic)
 * [Inheritance](https://github.com/MapsterMapper/Mapster/wiki/Config-inheritance)
+* [Multiple sources](https://github.com/MapsterMapper/Mapster/wiki/Multiple-sources)
 
 ##### Plugins
 * [Async Support](https://github.com/MapsterMapper/Mapster/wiki/Async)
