@@ -12,6 +12,12 @@ Call `EnableJsonMapping` from your `TypeAdapterConfig` to enable Json.Net mappin
 ```csharp
 TypeAdapterConfig.GlobalSettings.EnableJsonMapping();
 ```
+
+or 
+
+```csharp
+config.EnableJsonMapping();
+```
     
 This will allow
 
