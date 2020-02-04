@@ -27,11 +27,11 @@ You can apply a specific config instance by passing it to the `Adapt` method. (N
 var result = src.Adapt<TDestination>(config);
 ```
 
-Or to an Adapter instance.
+Or to an Mapper instance.
 
 ```csharp
-var adapter = new Adapter(config);
-var result = adapter.Adapt<TDestination>(src);
+var mapper = new Mapper(config);
+var result = mapper.Map<TDestination>(src);
 ```
 
 ### Clone
