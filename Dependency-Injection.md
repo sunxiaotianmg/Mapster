@@ -12,7 +12,7 @@ On startup, register `TypeAdapterConfig`, and `ServiceMapper`.
 public void ConfigureServices(IServiceCollection services)
 {
     ...
-    services.AddSingleton(config); //what does it mean???
+    services.AddSingleton(config);
     services.AddScoped<IMapper, ServiceMapper>();
     ...
 }
