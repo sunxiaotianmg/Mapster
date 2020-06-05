@@ -12,6 +12,9 @@ On startup, register `TypeAdapterConfig`, and `ServiceMapper`.
 public void ConfigureServices(IServiceCollection services)
 {
     ...
+    var config = new TypeAdapterConfig();
+    // Or
+    // var config = TypeAdapterConfig.GlobalSettings;
     services.AddSingleton(config);
     services.AddScoped<IMapper, ServiceMapper>();
     ...
