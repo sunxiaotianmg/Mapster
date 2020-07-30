@@ -39,4 +39,5 @@
 * [Dependency Injection](https://github.com/MapsterMapper/Mapster/wiki/Dependency-Injection)
 * [EF 6 & EF Core](https://github.com/MapsterMapper/Mapster/wiki/EF-6-&-EF-Core)
 * [FastExpressionCompiler](https://github.com/MapsterMapper/Mapster/wiki/FastExpressionCompiler)
+* [Immutable](https://github.com/MapsterMapper/Mapster/wiki/Immutable)
 * [Json.net](https://github.com/MapsterMapper/Mapster/wiki/Json.net)
