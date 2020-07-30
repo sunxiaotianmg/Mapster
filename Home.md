@@ -9,14 +9,14 @@
 | `query.ProjectToType<Dest>()` | Mapping from queryable     | [basic](https://github.com/MapsterMapper/Mapster/wiki/Basic-usages) |
 | | Convention & Data type support | [data types](https://github.com/MapsterMapper/Mapster/wiki/Data-types) |
 
-#### Mapper instance
+#### Mapper instance (for dependency injection)
 | Method        | Description           | Link  |
 | ------------- |-----------------------| ----- |
 | `IMapper mapper = new Mapper()`     | Create mapper instance | [mappers](https://github.com/MapsterMapper/Mapster/wiki/Mappers) |
 | `mapper.Map<Dest>(src)`     | Mapping to new type |  |
 | `mapper.Map(src, dest)`       | Mapping to existing object      |  |
 
-#### Builder
+#### Builder (for complex mapping)
 | Method        | Description           | Link  |
 | ------------- |-----------------------| ----- |
 | `src.BuildAdapter()` <br> `mapper.From(src)`     | Create builder | [mappers](https://github.com/MapsterMapper/Mapster/wiki/Mappers) |
@@ -76,6 +76,7 @@
 | `ConstructUsing` | Define how to create object | x | [constructor](https://github.com/MapsterMapper/Mapster/wiki/Constructor-mapping) |
 | `EnableNonPublicMembers` | Mapping non-public properties |  | [non-public](https://github.com/MapsterMapper/Mapster/wiki/Mapping-non-public-members) |
 | `EnumMappingStrategy` | Choose whether mapping enum by value or by name |  | [data types](https://github.com/MapsterMapper/Mapster/wiki/Data-types) |
+| `Fork` | Add new settings without side effect on main config | x | [nested mapping](https://github.com/MapsterMapper/Mapster/wiki/Config-for-nested-mapping) |
 | `GetMemberName` | Define how to resolve property name | x | [custom naming](https://github.com/MapsterMapper/Mapster/wiki/Naming-convention) |
 | `Ignore` | Ignore specific properties | x | [ignore](https://github.com/MapsterMapper/Mapster/wiki/Ignoring-members) |
 | `IgnoreAttribute` | Ignore specific attributes annotated on properties | x | [attribute](https://github.com/MapsterMapper/Mapster/wiki/Setting-by-attributes) |
@@ -117,4 +118,5 @@
 | [Dependency Injection](https://github.com/MapsterMapper/Mapster/wiki/Dependency-Injection) | `MapContext.Current.GetService<IService>()` | Inject service into mapping logic |
 | [EF 6 & EF Core](https://github.com/MapsterMapper/Mapster/wiki/EF-6-&-EF-Core) | `builder.EntityFromContext` | Copy data to tracked EF entity |
 | [FEC](https://github.com/MapsterMapper/Mapster/wiki/FastExpressionCompiler) | `config.Compiler = exp => exp.CompileFast()` | compile using FastExpressionCompiler |
+| [Immutable](https://github.com/MapsterMapper/Mapster/wiki/Immutable) | `config.EnableImmutableMapping()` | mapping to immutable collection |
 | [Json.net](https://github.com/MapsterMapper/Mapster/wiki/Json.net) | `config.EnableJsonMapping()` | map json from/to poco and string |
