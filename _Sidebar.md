@@ -34,10 +34,13 @@
 
 ##### Plugins
 * [Async Support](https://github.com/MapsterMapper/Mapster/wiki/Async)
-* [Code Generation](https://github.com/MapsterMapper/Mapster/wiki/CodeGen)
 * [Debugging](https://github.com/MapsterMapper/Mapster/wiki/Debugging)
 * [Dependency Injection](https://github.com/MapsterMapper/Mapster/wiki/Dependency-Injection)
 * [EF 6 & EF Core](https://github.com/MapsterMapper/Mapster/wiki/EF-6-&-EF-Core)
 * [FastExpressionCompiler](https://github.com/MapsterMapper/Mapster/wiki/FastExpressionCompiler)
 * [Immutable](https://github.com/MapsterMapper/Mapster/wiki/Immutable)
 * [Json.net](https://github.com/MapsterMapper/Mapster/wiki/Json.net)
+
+##### Tools
+* [Mapster.Tool](https://github.com/MapsterMapper/Mapster/wiki/Mapster.Tool)
+* [TextTemplate](https://github.com/MapsterMapper/Mapster/wiki/TextTemplate)
