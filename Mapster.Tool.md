@@ -54,19 +54,11 @@ mapper.MapToExisting(dto, poco);
 
 2. Install `Mapster.Tool`
 
-You can install per repo
-
 ```bash
 #skip this step if you already have dotnet-tools.json
 dotnet new tool-manifest 
 
 dotnet tool install Mapster.Tool
-```
-
-Or you can install globally on your machine
-
-```bash
-dotnet tool install -g Mapster.Tool
 ```
 
 NOTE: the tool required .NET Core 2.1 or .NET Core 3.1 on your machine.
@@ -75,6 +67,7 @@ NOTE: the tool required .NET Core 2.1 or .NET Core 3.1 on your machine.
 
 ```xml
 <Target Name="mapster" AfterTargets="AfterBuild">
+    <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet tool restore" />
     <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster -a $(TargetDir)$(ProjectName).dll" />
 </Target>
 ```
