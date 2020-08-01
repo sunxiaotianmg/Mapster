@@ -1,4 +1,4 @@
-### TextTamplate
+### TextTemplate
 ```
     PM> Install-Package ExpressionTranslator
 ```
