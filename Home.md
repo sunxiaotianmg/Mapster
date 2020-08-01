@@ -113,10 +113,16 @@
 | Plugin | Method        | Description           |
 | ------ | ------------- |-----------------------|
 | [Async](https://github.com/MapsterMapper/Mapster/wiki/Async) | `setting.AfterMappingAsync` <br> `builder.AdaptToTypeAsync` | perform async operation on mapping |
-| [Codegen](https://github.com/MapsterMapper/Mapster/wiki/CodeGen) | `builder.CreateMapExpression<DTO>().ToScript()` | generate mapping code |
 | [Debugging](https://github.com/MapsterMapper/Mapster/wiki/Debugging) | `config.Compiler = exp => exp.CompileWithDebugInfo()` | compile to allow step into debugging |
 | [Dependency Injection](https://github.com/MapsterMapper/Mapster/wiki/Dependency-Injection) | `MapContext.Current.GetService<IService>()` | Inject service into mapping logic |
 | [EF 6 & EF Core](https://github.com/MapsterMapper/Mapster/wiki/EF-6-&-EF-Core) | `builder.EntityFromContext` | Copy data to tracked EF entity |
 | [FEC](https://github.com/MapsterMapper/Mapster/wiki/FastExpressionCompiler) | `config.Compiler = exp => exp.CompileFast()` | compile using FastExpressionCompiler |
 | [Immutable](https://github.com/MapsterMapper/Mapster/wiki/Immutable) | `config.EnableImmutableMapping()` | mapping to immutable collection |
 | [Json.net](https://github.com/MapsterMapper/Mapster/wiki/Json.net) | `config.EnableJsonMapping()` | map json from/to poco and string |
+
+#### Code Generation Tools
+
+| Plugin | Tool          | Description           |
+| ------ | ------------- |-----------------------|
+| [Mapster.Tool](https://github.com/MapsterMapper/Mapster/wiki/Mapster.Tool) | `dotnet mapster` | automatically generate mapping codes on build |
+| [TextTemplate](https://github.com/MapsterMapper/Mapster/wiki/TextTamplate) | `t4` | generate mapping codes using t4 |
