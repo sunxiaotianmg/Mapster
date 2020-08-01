@@ -125,4 +125,4 @@
 | Plugin | Tool          | Description           |
 | ------ | ------------- |-----------------------|
 | [Mapster.Tool](https://github.com/MapsterMapper/Mapster/wiki/Mapster.Tool) | `dotnet mapster` | automatically generate mapping codes on build |
-| [TextTemplate](https://github.com/MapsterMapper/Mapster/wiki/TextTamplate) | `t4` | generate mapping codes using t4 |
+| [TextTemplate](https://github.com/MapsterMapper/Mapster/wiki/TextTemplate) | `t4` | generate mapping codes using t4 |
