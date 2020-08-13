@@ -14,13 +14,13 @@ var dest = TypeAdapter.Adapt<DerivedPoco, SimpleDto>(src);
 //dest.Name = src.Name + "_Suffix"
 ```
 
-If you don't wish a derived type to use the base mapping, you can turn off by `AllowImplicitSourceInheritance`
+If you don't wish for a derived type to use the base mapping, you can turn it off by using `AllowImplicitSourceInheritance`
 
 ```csharp
 TypeAdapterConfig.GlobalSettings.AllowImplicitSourceInheritance = false;
 ```
 
-And by default, Mapster will not inherit destination type mappings. You can turn on by `AllowImplicitDestinationInheritance`.
+And by default, Mapster will not inherit destination type mappings. You can turn it on by `AllowImplicitDestinationInheritance`.
 
 ```csharp
 TypeAdapterConfig.GlobalSettings.AllowImplicitDestinationInheritance = true;
@@ -47,5 +47,5 @@ Vehicle vehicle = new Car { Id = 1, Name = "Car", Make = "Toyota" };
 var dto = vehicle.Adapt<Vehicle, VehicleDto>();
 
 dto.ShouldBeOfType<CarDto>();
-((CarDto)dto).Make.ShouldBe("Toyota"); //Make property doesn't exist in Vehicle
+((CarDto)dto).Make.ShouldBe("Toyota"); //The 'Make' property doesn't exist in Vehicle
 ```
