@@ -12,7 +12,7 @@ Then add following code on start up (or anywhere before mapping is compiled)
 TypeAdapterConfig.GlobalSettings.Compiler = exp => exp.CompileWithDebugInfo();
 ```
 
-Now on your mapping code (only in `DEBUG` mode).
+Now in your mapping code (only in `DEBUG` mode).
 
 ```csharp
 var dto = poco.Adapt<SimplePoco, SimpleDto>(); //<--- you can step-into this function!!
@@ -22,11 +22,11 @@ var dto = poco.Adapt<SimplePoco, SimpleDto>(); //<--- you can step-into this fun
 
 ##### Using internal classes or members
 
-`private`, `protected` and `internal` don't allow in debug mode.
+`private`, `protected` and `internal` aren't allowed in debug mode.
 
 ### Get mapping script
 
-We can also see how Mapster generate mapping logic with `ToScript` method.
+We can also see how Mapster generates mapping logic with `ToScript` method.
 
 ```
 var script = poco.BuildAdapter()
@@ -44,8 +44,8 @@ var dto = poco.Adapt<SimplePoco, SimpleDto>(); //<-- you can step-into this func
 ```
 
 ### Do not worry about performance
-In `RELEASE` mode, Roslyn compiler actually faster than default dynamic compilation by 2x. 
-Here is the result.
+In `RELEASE` mode, Roslyn compiler is actually faster than default dynamic compilation by 2x. 
+Here is the result:
 
 |                    Method |           Mean |       StdDev |        Error |       Gen 0 | Gen 1 | Gen 2 |  Allocated |
 |-------------------------- |---------------:|-------------:|-------------:|------------:|------:|------:|-----------:|
