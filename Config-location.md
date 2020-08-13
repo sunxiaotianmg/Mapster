@@ -25,7 +25,7 @@ var dto2 = poco2.Adapt<Dto>(config);
 
 ### Keep together with mapping
 
-Problem with separating configuration and mapping is, coding will be separated into 2 locations. You might remove or alter mapping, and you can forget to update the configuration. `Fork` method allow you to keep config and mapping inline.
+A potential problem with separating configuration and mapping is that the code will be separated into 2 locations. You might remove or alter mapping, and you can forget to update the configuration. `Fork` method allow you to keep config and mapping inline.
 
 ```csharp
 var dto = poco.Adapt<Dto>(
@@ -94,7 +94,7 @@ var registers = container.GetExports<IRegister>();
 config.Apply(registers);
 ```
 
-`Apply` method also allow you to selectively pick from one or more `IRegister` rather than every `IRegister` in assembly.
+`Apply` method also allows you to selectively pick from one or more `IRegister` rather than every `IRegister` in assembly.
 
 ```csharp
 var register = new MockingRegister();
