@@ -7,7 +7,7 @@ decimal i = 123.Adapt<decimal>(); //equal to (decimal)123;
 ### Enums
 
 Mapster maps enums to numerics automatically, but it also maps strings to and from enums automatically in a fast manner.  
-The default Enum.ToString() in .Net is quite slow. The implementation in Mapster is double the speed. Likewise, a fast conversion from strings to enums is also included.  If the string is null or empty, the enum will initialize to the first enum value.
+The default Enum.ToString() in .NET is quite slow. The implementation in Mapster is double the speed. Likewise, a fast conversion from strings to enums is also included.  If the string is null or empty, the enum will initialize to the first enum value.
 
 In Mapster, flagged enums are also supported.
 ```csharp
@@ -21,7 +21,7 @@ TypeAdapterConfig.GlobalSettings.Default
 ```
 ### Strings
 
-When Mapster maps other types to string, Mapster will use `ToString` method. And when ever Mapster maps string to the other types, Mapster will use `Parse` method.
+When Mapster maps other types to string, Mapster will use `ToString` method. And whenever Mapster maps string to the other types, Mapster will use `Parse` method.
 ```csharp
 var s = 123.Adapt<string>(); //equal to 123.ToString();
 var i = "123".Adapt<int>();  //equal to int.Parse("123");
@@ -35,7 +35,7 @@ var target = list.Adapt<IEnumerable<Dto>>();
 ```
 ### Mappable Objects
 
-Mapster can map 2 different objects using the following rules
+Mapster can map two different objects using the following rules
 - Source and destination property names are the same. Ex: `dest.Name = src.Name`
 - Source has get method. Ex: `dest.Name = src.GetName()`
 - Source property has child object which can flatten to destination. Ex: `dest.ContactName = src.Contact.Name` or `dest.Contact_Name = src.Contact.Name`
@@ -68,7 +68,7 @@ Mappable Object types are included:
 - Dictionary type implement `IDictionary<string, T>`
 - Record types (either class, struct, and interface)
 
-Example for object to dictionary
+Example for object to dictionary:
 
 ```csharp
 var point = new { X = 2, Y = 3 };
@@ -93,4 +93,4 @@ var src = new { Name = "Mapster", Age = 3 };
 var target = src.Adapt<Person>();
 ``` 
 
-There is limitation on record type mapping. Record type must not have setter and have only one non-empty constructor. And all parameter names must match with properties.
+There are limitations on record type mapping. Record type must not have a setter and have only one non-empty constructor, and all parameter names must match with properties.
