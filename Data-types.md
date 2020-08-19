@@ -93,4 +93,4 @@ var src = new { Name = "Mapster", Age = 3 };
 var target = src.Adapt<Person>();
 ``` 
 
-There are limitations on record type mapping. Record type must not have a setter and have only one non-empty constructor, and all parameter names must match with properties.
+There are limitations to map Record type automatically. Record type must not have a setter and have only one non-empty constructor, and all parameter names must match with properties. Otherwise you need to add [`MapToConstructor`](https://github.com/MapsterMapper/Mapster/wiki/Constructor-mapping#map-to-constructor) config.
