@@ -10,7 +10,7 @@ dotnet tool install Mapster.Tool
 ### Commands
 Mapster.Tool provides 3 commands
 - **model**: generate models from entities
-- **extensions**: generate extension methods from entities
+- **extension**: generate extension methods from entities
 - **mapper**: generate mappers from interfaces
 
 And Mapster.Tool provides following options
