@@ -30,3 +30,12 @@ _mapper.From(dto)
     .EntityFromContext(db)
     .AdaptTo(poco);
 ```
+
+#### EF Core ProjectToType
+`Mapster.EfCore` also allows `ProjectToType` from mapper instance.
+
+```csharp
+var query = db.Customers.Where(...);
+_mapper.From(query)
+    .ProjectToType<Dto>();
+```
