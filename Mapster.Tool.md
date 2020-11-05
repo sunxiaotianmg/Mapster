@@ -31,7 +31,7 @@ add following code to your `csproj` file.
     <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster mapper -a $(TargetDir)$(ProjectName).dll" />
   </Target>
 ```
-to generate run following command:
+to generate run following command on `csproj` file directory:
 ```bash
 dotnet msbuild -t:Mapster
 ```
