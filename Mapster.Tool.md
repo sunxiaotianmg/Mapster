@@ -171,6 +171,7 @@ public class StudentMerge {
 
 ### Generate extension methods
 
+#### Generate using `[GenerateMapper]` attribute
 For any POCOs annotate with `[AdaptFrom]`, `[AdaptTo]`, or `[AdaptTwoWays]`, you can add `[GenerateMapper]` in order to generate extension methods.
 
 Example:
@@ -192,6 +193,22 @@ public static class StudentMapper {
     public static Expression<Func<Student, StudentDto>> ProjectToDto => ...
 }
 ```
+
+#### Generate using configuration
+
+You can also generate extension methods and add extra settings from configuration.
+
+```csharp
+public class MyRegister : IRegister
+{
+    public void Register(TypeAdapterConfig config)
+    {
+        config.NewConfig<TSource, TDestination>()
+            .GenerateMapper(MapType.Map | MapType.MapToTarget);
+    }
+}
+```
+
 
 ### Generate mapper from interface
 
