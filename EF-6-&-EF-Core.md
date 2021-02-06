@@ -10,6 +10,12 @@ For EF Core
 
 In EF, objects are tracked, when you copy data from dto to entity containing navigation properties, this plugin will help finding entity object in navigation properties automatically.
 
+#### Mapster.EFCore & EFCore compatiability
+- use Mapster.EFCore version 5.x for EFCore 5.x
+- use Mapster.EFCore version 3.x for EFCore 3.x
+- use Mapster.EFCore version 1.x for EFCore 2.x
+
+
 #### Usage
 
 Use `EntityFromContext` method to define data context.
