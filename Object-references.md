@@ -10,6 +10,8 @@ TypeAdapterConfig<TSource, TDestination>
 
 NOTE: in Mapster setting is per type pair, not per hierarchy (see https://github.com/MapsterMapper/Mapster/wiki/Config-for-nested-classes). Therefore, you need to apply config to all type pairs.
 
+NOTE: you might need to use `MaxDepth`, `PreserveReference` doesn't support for EF Query
+
 ### MaxDepth
 
 Rather than `PreserveReference`, you could also try `MaxDepth`. `MaxDepth` will map until it reaches the defined limit. Unlike `PreserveReference`, `MaxDepth` also works with queryable projection.
