@@ -130,6 +130,19 @@ public static class StudentMapper {
 }
 ```
 
+#### Configuration
+If you have configuration, it must be in `IRegister`
+
+```csharp
+public class MyRegister : IRegister
+{
+    public void Register(TypeAdapterConfig config)
+    {
+        config.NewConfig<TSource, TDestination>();
+    }
+}
+```
+
 #### Generate using configuration
 
 You can also generate extension methods and add extra settings from configuration.
