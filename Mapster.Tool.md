@@ -27,9 +27,11 @@ Mapster.Tool provides 3 commands
 
 And Mapster.Tool provides following options
 - -a: define input assembly
+- -b: specify base namespace for generating dynamic outputs & namespaces
 - -n: define namespace of generated classes
 - -o: define output directory
 - -p: print full type name (if your DTOs/POCOs having the same name)
+- -r: generate record types instead of POCO types
 
 ### csproj integration
 
@@ -87,6 +89,35 @@ If your POCOs and DTOs have the same name, you might need to generate using full
     <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet mapster mapper -a &quot;$(TargetDir)$(ProjectName).dll&quot; -p" />
   </Target>
 ```
+
+#### Dynamic outputs & namespaces
+For example you have following structure.
+```
+Sample.CodeGen
+- Domains
+  - Sub1
+    - Domain1
+  - Sub2
+    - Domain2
+```
+
+And if you can specify base namespace as `Sample.CodeGen.Domains`
+```xml
+<Exec WorkingDirectory="$(ProjectDir)" 
+    Command="dotnet mapster model -a &quot;$(TargetDir)$(ProjectName).dll&quot; -n Sample.CodeGen.Generated -b Sample.CodeGen.Domains" />
+```
+
+Code will be generated to
+```
+Sample.CodeGen
+- Generated
+  - Sub1
+    - Domain1
+  - Sub2
+    - Domain2
+```
+
+
 
 ### Generate DTOs and mapping codes
 
