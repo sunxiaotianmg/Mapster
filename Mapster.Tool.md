@@ -112,9 +112,9 @@ Code will be generated to
 Sample.CodeGen
 - Generated
   - Sub1
-    - Domain1
+    - Dto1
   - Sub2
-    - Domain2
+    - Dto2
 ```
 
 
