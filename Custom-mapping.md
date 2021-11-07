@@ -6,7 +6,7 @@ You can customize how Mapster maps values to a property.
 TypeAdapterConfig<TSource, TDestination>
     .NewConfig()
     .Map(dest => dest.FullName,
-        src => string.Format("{0} {1}", src.FirstName, src.LastName));
+        src => $"{src.FirstName} {src.LastName}");
 ```
 
 You can even map when source and destination property types are different.
