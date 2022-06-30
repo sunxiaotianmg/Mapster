@@ -12,6 +12,10 @@ TypeAdapterConfig<TSource, TDestination>.NewConfig()
 //Example using an object initializer
 TypeAdapterConfig<TSource, TDestination>.NewConfig()
     .ConstructUsing(src => new TDestination{Unmapped = "unmapped"});
+
+//Example using an overload with `destination` parameter
+TypeAdapterConfig<TSource, TDestination>.NewConfig()
+    .ConstructUsing((src, destination) => new TDestination(src.Id, destination?.Name ?? src.Name));
 ```
 
 ### Map to constructor
