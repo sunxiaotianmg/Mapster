@@ -108,7 +108,7 @@
 | `[AdaptIgnore(side)]` | Ignore property from mapping | [attribute](https://github.com/MapsterMapper/Mapster/wiki/Setting-by-attributes) |
 | `[UseDestinationValue]` | Use existing property object to map data | [attribute](https://github.com/MapsterMapper/Mapster/wiki/Setting-by-attributes) |
 | `[AdaptTo]` `[AdaptFrom]` `[AdaptTwoWays]` | Add setting on POCO class | [location](https://github.com/MapsterMapper/Mapster/wiki/Config-location#attributes) |
-| `[Mapper]` `[GeneratMapper]` `[PropertyType]` | Define setting for code generation | [Mapster.Tool](https://github.com/MapsterMapper/Mapster/wiki/Mapster.Tool) |
+| `[Mapper]` `[GenerateMapper]` `[PropertyType]` | Define setting for code generation | [Mapster.Tool](https://github.com/MapsterMapper/Mapster/wiki/Mapster.Tool) |
 
 #### Plugins
 
