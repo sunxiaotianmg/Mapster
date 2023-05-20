@@ -1,4 +1,4 @@
-### Custom member mapping hihi
+### Custom member mapping
 
 You can customize how Mapster maps values to a property.
 
