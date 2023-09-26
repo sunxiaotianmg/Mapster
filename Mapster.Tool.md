@@ -116,9 +116,6 @@ Sample.CodeGen
   - Sub2
     - Dto2
 ```
-
-
-
 ### Generate DTOs and mapping codes
 
 There are 3 flavors, to generate DTOs and mapping codes
@@ -129,3 +126,37 @@ There are 3 flavors, to generate DTOs and mapping codes
 ### Sample
 
 - https://github.com/MapsterMapper/Mapster/tree/master/src/Sample.CodeGen
+
+### Troubleshooting
+
+#### System.IO.FileNotFoundException
+If you get an error similar to `Unhandled exception. System.IO.FileNotFoundException: Could not load file or assembly '...'. The system cannot find the file specified.` and you are using Mapster.Tool 8.4.1 or newer, then you can try one of the following workarounds:
+
+**Workaround 1**
+
+Add `<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>` to your csproj file as follows:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    </PropertyGroup>
+    [...]
+```
+
+**Workaround 2**
+
+Change your `dotnet build` command to `dotnet build -p:CopyLocalLockFileAssemblies=true` as follows:
+
+```xml
+  <Target Name="Mapster">
+	<Exec WorkingDirectory="$(ProjectDir)" Command="dotnet build -p:CopyLocalLockFileAssemblies=true" />
+	[...]
+  </Target>
+```
+
+
+
+```
+```
