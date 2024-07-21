@@ -17,6 +17,9 @@ sourceObject.Adapt(destObject);
 
 Mapster also provides extensions to map queryables.
 
+> [!IMPORTANT]  
+> Avoid calling ProjectToType() before materializing queries from Entity Framework. This is known to cause issues. Instead, call ToList() or ToListAsync() before calling ProjectToType.
+
 ```csharp
 using (MyDbContext context = new MyDbContext())
 {
