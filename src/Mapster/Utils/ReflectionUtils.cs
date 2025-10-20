@@ -429,5 +429,16 @@ namespace Mapster
 
             return false;
         }
+
+        public static bool IsAbstractOrNotPublicCtor(this Type type)
+        {
+            if(type.IsAbstract)
+                return true;
+
+            if (type.GetConstructors().All(x => !x.IsPublic))
+                return true;
+                        
+            return false;
+        }
     }
 }

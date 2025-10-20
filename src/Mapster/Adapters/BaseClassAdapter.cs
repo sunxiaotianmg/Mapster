@@ -227,7 +227,8 @@ namespace Mapster.Adapters
                 else
                 {
 
-                    if (member.Getter.CanBeNull() && member.Ignore.Condition == null)
+                    if (member.Getter.CanBeNull() && member.DestinationMember.Type.IsAbstractOrNotPublicCtor()
+                        && member.Ignore.Condition == null)
                     {
                         var compareNull = Expression.Equal(member.Getter, Expression.Constant(null, member.Getter.Type));
                         getter = Expression.Condition(ExpressionEx.Not(compareNull),
