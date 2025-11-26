@@ -294,8 +294,9 @@ namespace Mapster
         public static TDestination Adapt<TSource, TDestination>(this object? source, Action<TypeAdapterSetter<TSource, TDestination>> configAction)
         {
             var config = TypeAdapterConfig.GlobalSettings.Clone();
-            var setter = config.NewConfig<TSource, TDestination>();
+            var setter = config.ForType<TSource, TDestination>();
             configAction(setter);
+            setter.Settings.Resolvers.Reverse();
             return source.Adapt<TDestination>(config);
         }
     }
