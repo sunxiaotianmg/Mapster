@@ -1,0 +1,26 @@
+{
+    "version": "0.2",
+    "language": "en",
+    "words": [
+        "alertblocks",
+        "appsettings",
+        "definitionlists",
+        "docfx",
+        "dotnet",
+        "github",
+        "gridtables",
+        "markdig",
+        "medialinks",
+        "MVVM"
+    ],
+    "dictionaries": [
+        "csharp",
+        "companies"
+    ],
+    "ignoreWords": [],
+    "ignorePaths": [
+        "src/*",
+        "**.gitignore",
+        "LICENSE"
+    ]
+}

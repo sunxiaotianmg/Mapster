@@ -3,11 +3,16 @@
 - items:
   - name: Mapping
     href: mapping/toc.yml
+    topicHref: xref:Mapster.Mapping.BasicUsages
   - name: Configuration
     href: configuration/toc.yml
+    topicHref: xref:Mapster.Configuration.Overview
   - name: Settings
     href: settings/toc.yml
+    topicHref: xref:Mapster.Settings.Custom.Mapping
   - name: Plugins
     href: plugins/toc.yml
+    topicHref: xref:Mapster.Plugins.Async
   - name: Tools
     href: tools/toc.yml
+    topicHref: xref:Mapster.Tools.MapsterTool.Overview

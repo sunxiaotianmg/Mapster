@@ -1,0 +1,2 @@
+_site/*
+!docs/articles/packages/**.md

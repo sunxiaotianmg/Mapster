@@ -1,0 +1,14 @@
+# YAML-Language Server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/filterconfig.schema.json
+# Filter configuration file
+# More information about filter configuration can be found at https://dotnet.github.io/docfx/docs/dotnet-api-docs.html#custom-filter-rules
+# To exclude specific namespaces, types, or members from the generated API documentation, uncomment and modify the rules below, using appropriate regular expressions.
+# apiRules:
+#   - exclude:
+#       uidRegex: ^PartialNamespace\.NextNamespace$
+#       type: Namespace
+#   - exclude:
+#       uidRegex: SomeTypeName$
+#       type: Type
+#   - exclude:
+#       uidRegex: __SomeMemberName(\(.*\))?$
+#       type: Member

@@ -1,0 +1,123 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            // "**/DevTKSS.Extensions.Uno.Extensions.csproj",
+            // "**/DevTKSS.Uno.Samples.MvuxGallery.csproj"
+          ],
+          "src": "../src"
+        }
+      ],
+      "includeExplicitInterfaceImplementations": false,
+      "disableDefaultFilter": false,
+      "filter": "Resources/filterConfig.yml",
+      "properties": {
+        "TargetFramework" : "net9.0"
+      },
+      "codeSourceBasePath": "../",
+      "noRestore": true,
+      "output": "api",
+      "memberLayout": "samePage",
+      "outputFormat": "apiPage"
+    }
+  ],
+  "build": {
+      "globalMetadata": {
+      "_appTitle": "Mapster - The Mapper of Your Domain",
+      "_appName": "Mapster",
+      //"_appFaviconPath": "images/logo/your-logo.ico",
+      "_appLogoPath": "https://cloud.githubusercontent.com/assets/5763993/26522718/d16f3e42-4330-11e7-9b78-f8c7402624e7.png",
+      "_copyrightFooter": "© 2025 Here comes your Name, All rights reserved.",
+      "_ownerName": "Awesome Developer",
+      "_githubProfileLink": "https://github.com/MapsterMapper",
+      "_enableSearch": true,
+      "_disableAffix": false,
+      "_disableBreadcrumb": false,
+      "_disableNextArticle": false,
+      "_disableTocFilter": false,
+      "_lang": "en",
+      "_gitConribute": {
+        "branch": "development"
+      },
+      "pdf": false,
+      "_layout": "landing"
+    },
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "articles/**.{md,yml}",
+          "toc.yml",
+          "index.md",
+          "../README.md"
+        ],
+        "src": "articles",
+        "dest": "docs",
+        "exclude": [
+          "**/.include/**"
+        ]
+      },
+      {
+        "rootTocPath": "releases",
+        "files":["../releases/**.{md}"],
+        "src": "../releases",
+        "dest": "releases"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/*.{png,ico}",
+          "articles/.assets/*.{png,gif}"
+        ],
+        "dot": true
+      }
+    ],
+    "overwrite": [
+      {
+        "files":[
+          "api/**.md",
+          "api/**.yml",
+          "articles/**.md",
+          "articles/**.yml",
+          "index.md"
+        ],
+        "exclude":[
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "template": [
+      "default",
+      "modern"
+    ],
+    "xref": [ "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json" ],
+    "markdownEngineProperties": {
+      "markdigExtensions": [
+        "yaml",
+        "definitionlists",
+        "diagrams",
+        "advanced",
+        "alerts",
+        "footers",
+        "footnotes",
+        "medialinks"
+      ]
+    },
+    "output": "_site",
+    "sitemap": {
+      "baseUrl": "https://mapstermapper.github.io/Mapster",
+      "priority": 0.1,
+      "changefreq": "monthly"
+    }
+  }
+}
