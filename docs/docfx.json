@@ -26,8 +26,8 @@
       "globalMetadata": {
       "_appTitle": "Mapster - The Mapper of Your Domain",
       "_appName": "Mapster",
-      //"_appFaviconPath": "images/mapster-logo.png",
-      "_appLogoPath": "images/mapster-logo.png",
+      //"_appFaviconPath": "images/mapster-logo.png", // requires rescaling and eventually converting to .ico
+      // "_appLogoPath": "images/mapster-logo.png", // requires rescaling!
       "_copyrightFooter": "© 2025 Here comes your Name, All rights reserved.",
       "_ownerName": "Awesome Developer",
       "_githubProfileLink": "https://github.com/MapsterMapper",
@@ -36,29 +36,42 @@
       "_disableBreadcrumb": false,
       "_disableNextArticle": false,
       "_disableTocFilter": false,
+      "_disableToc": false,
       "_lang": "en",
       "_gitConribute": {
         "branch": "development"
       },
-      "pdf": false,
-      "_layout": "landing"
+      "pdf": false
     },
     "content": [
-      // {
-      //   "files": [
-      //     "api/**.yml",
-      //     "api/index.md"
-      //   ]
-      // },
       {
         "files": [
-          "articles/**.{md,yml}",
+          "articles/**.md",
+          "articles/toc.yml",
+          "articles/**/toc.yml",
           "toc.yml",
-          "index.md",
-          "README.md"
+          "index.md"
         ],
         "exclude": [
-          "**/.include/**"
+          "**/.include/**",
+          "articles/_Sidebar.md"
+        ]
+      },
+      {
+        "src": "../",
+        "files": [
+          "README.md"
+        ]
+      },
+      {
+        "files": [
+
+          "api/Reference.md"
+        ],
+        // Include the following lines, if we are generating metadata API Docs
+        "exclude": [
+          "api/**.yml",
+          "index.md"
         ]
       }
     ],
@@ -69,21 +82,6 @@
           "articles/.assets/*.{png,gif}"
         ],
         "dot": true
-      }
-    ],
-    "overwrite": [
-      {
-        "files":[
-          // "api/**.md",
-          // "api/**.yml",
-          "articles/**.md",
-          "articles/**.yml",
-          "index.md"
-        ],
-        "exclude":[
-          "obj/**",
-          "_site/**"
-        ]
       }
     ],
     "template": [
@@ -105,7 +103,7 @@
     },
     "output": "_site",
     "sitemap": {
-      "baseUrl": "https://mapstermapper.github.io/Mapster",
+      "baseUrl": "https://devtkss.github.io/Mapster",
       "priority": 0.1,
       "changefreq": "monthly"
     }

@@ -3,8 +3,10 @@
 # IMPORTANT: Do not add the explicit toc.yml files under the appropriate folders here, as this would otherwhise attempt to show them in the top navigation instead of the side navigation TOCs.
 # See: https://dotnet.github.io/docfx/docs/table-of-contents.html#navigation-bar
 - name: Home
+  uid: Mapster.Overview
   href: index.md
 - name: Documentation
   href: articles/
-# - name: API Reference
-#   href: api/
+- name: Reference
+  uid: Mapster.References
+  href: api/Reference.md
