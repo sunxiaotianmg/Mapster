@@ -263,6 +263,42 @@ namespace Mapster
             }
             return source.Adapt<TDestination>(config);
         }
+
+
+        /// <summary>
+        /// Adapt the source object to a destination type using a temporary configuration.
+        /// A new TypeAdapterConfig is created for this call, ensuring GlobalSettings remain unchanged.
+        /// Safe for init-only properties and record types.
+        /// </summary>
+        /// <typeparam name="TDestination">Destination type.</typeparam>
+        /// <param name="source">Source object to adapt.</param>
+        /// <param name="configAction">Action to customize the temporary config.</param>
+        /// <returns>Adapted destination object of type TDestination.</returns>
+        public static TDestination Adapt<TDestination>(this object? source, Action<TypeAdapterConfig> configAction)
+        {
+            var config = TypeAdapterConfig.GlobalSettings.Clone();
+            configAction(config);
+            return source.Adapt<TDestination>(config);
+        }
+
+        /// <summary>
+        /// Adapt the source object from TSource to TDestination using a dedicated TypeAdapterSetter.
+        /// A temporary TypeAdapterConfig is created and configured via the setter.
+        /// Safe for init-only properties and record types, without modifying GlobalSettings.
+        /// </summary>
+        /// <typeparam name="TSource">Source type.</typeparam>
+        /// <typeparam name="TDestination">Destination type.</typeparam>
+        /// <param name="source">Source object to adapt.</param>
+        /// <param name="configAction">Action to customize the TypeAdapterSetter.</param>
+        /// <returns>Adapted destination object of type TDestination.</returns>
+        public static TDestination Adapt<TSource, TDestination>(this object? source, Action<TypeAdapterSetter<TSource, TDestination>> configAction)
+        {
+            var config = TypeAdapterConfig.GlobalSettings.Clone();
+            var setter = config.ForType<TSource, TDestination>();
+            configAction(setter);
+            setter.Settings.Resolvers.Reverse();
+            return source.Adapt<TDestination>(config);
+        }
     }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S1104:Fields should not have public accessibility", Justification = "<Pending>")]
