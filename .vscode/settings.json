@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.agent.md": "chatagent",
+        "*.instructions.md": "instructions",
+        "*.prompt.md": "prompt",
+        "docfx.json": "jsonc"
+    }
+}
