@@ -4,7 +4,29 @@
 
 Writing mapping methods is a machine job. Do not waste your time, let Mapster do it.
 
-[![NuGet](https://img.shields.io/nuget/v/Mapster.svg)](https://www.nuget.org/packages/Mapster/latest)
+## NuGet Sources
+
+### NuGet Packages
+
+| Package | Stable | Pre-release |
+|---------|--------|-------------|
+| **Mapster** | [![Mapster](https://img.shields.io/nuget/v/Mapster.svg?label=Mapster&color=informational)](https://www.nuget.org/packages/Mapster/latest) | [![Mapster](https://img.shields.io/nuget/vpre/Mapster.svg?label=Mapster&color=orange)](https://www.nuget.org/packages/Mapster) |
+| **Mapster.Core** | [![Mapster.Core](https://img.shields.io/nuget/v/Mapster.Core.svg?label=Mapster.Core&color=informational)](https://www.nuget.org/packages/Mapster.Core/latest) | [![Mapster.Core](https://img.shields.io/nuget/vpre/Mapster.Core.svg?label=Mapster.Core&color=orange)](https://www.nuget.org/packages/Mapster.Core) |
+| **Mapster.DependencyInjection** | [![Mapster.DependencyInjection](https://img.shields.io/nuget/v/Mapster.DependencyInjection.svg?label=Mapster.DependencyInjection&color=informational)](https://www.nuget.org/packages/Mapster.DependencyInjection/latest) | [![Mapster.DependencyInjection](https://img.shields.io/nuget/vpre/Mapster.DependencyInjection.svg?label=Mapster.DependencyInjection&color=orange)](https://www.nuget.org/packages/Mapster.DependencyInjection) |
+| **Mapster.EFCore** | [![Mapster.EFCore](https://img.shields.io/nuget/v/Mapster.EFCore.svg?label=Mapster.EFCore&color=informational)](https://www.nuget.org/packages/Mapster.EFCore/latest) | [![Mapster.EFCore](https://img.shields.io/nuget/vpre/Mapster.EFCore.svg?label=Mapster.EFCore&color=orange)](https://www.nuget.org/packages/Mapster.EFCore) |
+| **Mapster.EF6** | [![Mapster.EF6](https://img.shields.io/nuget/v/Mapster.EF6.svg?label=Mapster.EF6&color=informational)](https://www.nuget.org/packages/Mapster.EF6/latest) | [![Mapster.EF6](https://img.shields.io/nuget/vpre/Mapster.EF6.svg?label=Mapster.EF6&color=orange)](https://www.nuget.org/packages/Mapster.EF6) |
+| **Mapster.JsonNet** | [![Mapster.JsonNet](https://img.shields.io/nuget/v/Mapster.JsonNet.svg?label=Mapster.JsonNet&color=informational)](https://www.nuget.org/packages/Mapster.JsonNet/latest) | [![Mapster.JsonNet](https://img.shields.io/nuget/vpre/Mapster.JsonNet.svg?label=Mapster.JsonNet&color=orange)](https://www.nuget.org/packages/Mapster.JsonNet) |
+| **Mapster.Immutable** | [![Mapster.Immutable](https://img.shields.io/nuget/v/Mapster.Immutable.svg?label=Mapster.Immutable&color=informational)](https://www.nuget.org/packages/Mapster.Immutable/latest) | [![Mapster.Immutable](https://img.shields.io/nuget/vpre/Mapster.Immutable.svg?label=Mapster.Immutable&color=orange)](https://www.nuget.org/packages/Mapster.Immutable) |
+| **Mapster.Diagnostics** | [![Mapster.Diagnostics](https://img.shields.io/nuget/v/Mapster.Diagnostics.svg?label=Mapster.Diagnostics&color=informational)](https://www.nuget.org/packages/Mapster.Diagnostics/latest) |  |
+| **ExpressionDebugger** | [![ExpressionDebugger](https://img.shields.io/nuget/v/ExpressionDebugger.svg?label=ExpressionDebugger&color=informational)](https://www.nuget.org/packages/ExpressionDebugger/latest) |  |
+
+### DotNet Tools
+
+| Tool | Stable | Pre-release |
+|------|--------|-------------|
+| **Mapster.Tool** | [![Mapster.Tool](https://img.shields.io/nuget/v/Mapster.Tool.svg?label=Mapster.Tool&color=informational)](https://www.nuget.org/packages/Mapster.Tool/latest) | [![Mapster.Tool](https://img.shields.io/nuget/vpre/Mapster.Tool.svg?label=Mapster.Tool&color=orange)](https://www.nuget.org/packages/Mapster.Tool) |
+
+_Badges zeigen die jeweils aktuellste Stable-Version und die aktuellste Pre-Release-Version._
 
 ## Installation
 
@@ -152,7 +174,7 @@ Code generation allows you to
 
 There are currently two tools which you can choose based on your preferences.
 
-- [Mapster.Tool](https://github.com/MapsterMapper/Mapster/wiki/Mapster.Tool) ***NEW!***
+- [Mapster.Tool](https://github.com/MapsterMapper/Mapster/wiki/Mapster.Tool) _**NEW!**_
 - [TextTemplate](https://github.com/MapsterMapper/Mapster/wiki/TextTemplate)
 
 ## Change logs
@@ -170,5 +192,3 @@ https://github.com/MapsterMapper/Mapster/releases
 
 - **Resharper** makes Visual Studio a much better IDE
 - **Rider** is fast & powerful cross platform .NET IDE
-
-![image](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/121px-JetBrains_Logo_2016.svg.png)
