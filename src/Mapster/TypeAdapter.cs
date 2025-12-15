@@ -105,8 +105,9 @@ namespace Mapster
             if (sourceType == typeof(object)) // Infinity loop in ObjectAdapter if Runtime Type of source is Object 
                 return destination;
 
-            if (typeof(TSource) == typeof(object) || typeof(TDestination) == typeof(object))                
-                return UpdateFuncFromPackedinObject(source, destination, config, sourceType, destinationType);
+            if (typeof(TSource) == typeof(object) || typeof(TDestination) == typeof(object))
+                if(sourceType != null && destinationType != null)
+                    return UpdateFuncFromPackedinObject(source, destination, config, sourceType, destinationType);
                        
             var fn = config.GetMapToTargetFunction<TSource, TDestination>();
             return fn(source, destination);
