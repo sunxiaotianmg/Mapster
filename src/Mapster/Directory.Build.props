@@ -1,0 +1,14 @@
+<Project >
+	<PropertyGroup>
+		<!-- Properties related to benchmark builds -->
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='nuget-bench'">
+		<Optimize>true</Optimize>
+		<SignAssembly>false</SignAssembly>
+    </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='developer-bench'">
+		<Optimize>true</Optimize>
+		<SignAssembly>false</SignAssembly>
+	</PropertyGroup>
+</Project>

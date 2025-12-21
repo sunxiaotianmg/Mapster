@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Columns;
+﻿using Benchmark.Development;
+using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Exporters;
@@ -31,22 +32,27 @@ namespace Benchmark.Benchmarks
 
             AddColumn(BaselineRatioColumn.RatioMean);
             AddColumnProvider(DefaultColumnProviders.Metrics);
+                              
 
-            string[] targetVersions = [
-                    "7.4.0",
-                    "9.0.0-pre01",
-                ];
 
-            foreach (var version in targetVersions)
+            foreach (var version in MapsterVersion.Get())
             {
                 AddJob(Job.ShortRun
                     .WithLaunchCount(1)
                     .WithWarmupCount(2)
                     .WithIterationCount(10)
+                    .WithCustomBuildConfiguration("nuget-bench")
                     .WithMsBuildArguments($"/p:SciVersion={version}")
                     .WithId($"v{version}")
                 );
             }
+
+            AddJob(Job.ShortRun
+                .WithLaunchCount(1)
+                .WithWarmupCount(2)
+                .WithIterationCount(10)
+                .WithCustomBuildConfiguration("developer-bench")
+                .WithId("developer"));
 
             Options |= ConfigOptions.JoinSummary;
         }
