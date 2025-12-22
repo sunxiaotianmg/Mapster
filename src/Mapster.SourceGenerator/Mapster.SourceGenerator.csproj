@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net9.0;net8.0;</TargetFrameworks>
+		<TargetFramework>netstandard2.0</TargetFramework>
 		<Description>Source generator to generate mapping using Mapster</Description>
-		<PackageTags>source-generator;mapster</PackageTags>
+		<PackageTags>Mapster;source-generator</PackageTags>
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>Mapster.SourceGenerator.snk</AssemblyOriginatorKeyFile>
 		<RestoreAdditionalProjectSources>https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json ;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Mapster\Mapster.csproj" />
+	  <ProjectReference Include="..\Mapster.Core\Mapster.Core.csproj" />
 	</ItemGroup>
 
 </Project>
