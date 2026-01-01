@@ -522,6 +522,21 @@ namespace Mapster.Tests
             destination.X.X.ShouldBe(100);
         }
 
+        /// <summary>
+        /// https://github.com/MapsterMapper/Mapster/issues/842
+        /// </summary>
+        [TestMethod]
+        public void ClassUpdateAutoPropertyWitoutSetterWorking()
+        {
+            var source = new TestRecord() { X = 100 };
+            var patch = new TestRecord() { X = 200 };
+            var result = source.Adapt<AutoCtorDestX>();
+
+            patch.Adapt(result);
+
+            result.X.ShouldBe(200);
+        }
+
 
         #region NowNotWorking
 

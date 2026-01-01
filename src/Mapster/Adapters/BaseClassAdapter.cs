@@ -320,6 +320,22 @@ namespace Mapster.Adapters
             return null;
         }
 
+        protected static Expression SetValueTypeAutoPropertyByReflection(MemberMapping member, Expression adapt, ClassModel checkmodel)
+        {
+            var modDesinationMemeberName = $"<{member.DestinationMember.Name}>k__BackingField";
+            if (checkmodel.Members.Any(x => x.Name == modDesinationMemeberName) == false) // Property is not autoproperty
+                return Expression.Empty();
+            var typeofExpression = Expression.Constant(member.Destination!.Type);
+            var getPropertyMethod = typeof(Type).GetMethod("GetField", new[] { typeof(string), typeof(BindingFlags) })!;
+            var getPropertyExpression = Expression.Call(typeofExpression, getPropertyMethod,
+                Expression.Constant(modDesinationMemeberName), Expression.Constant(BindingFlags.Instance | BindingFlags.NonPublic));
+            var setValueMethod =
+                typeof(FieldInfo).GetMethod("SetValue", new[] { typeof(object), typeof(object) })!;
+            var memberAsObject = adapt.To(typeof(object));
+            return Expression.Call(getPropertyExpression, setValueMethod,
+                new[] { member.Destination, memberAsObject });
+        }
+
         #endregion
     }
 }
