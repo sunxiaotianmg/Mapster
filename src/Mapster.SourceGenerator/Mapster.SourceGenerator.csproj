@@ -7,7 +7,7 @@
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>Mapster.SourceGenerator.snk</AssemblyOriginatorKeyFile>
 		<RestoreAdditionalProjectSources>https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json ;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
-		<Version>10.0.0-pre02</Version>
+		<Version>10.0.0</Version>
 		<Nullable>enable</Nullable>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 	</PropertyGroup>
