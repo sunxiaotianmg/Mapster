@@ -16,13 +16,13 @@ namespace Benchmark.Benchmarks
             TestAdaptHelper.TestMapsterAdapter<Foo, Foo>(_fooInstance, Iterations);
         }
         
-        [Benchmark(Description = "Mapster 6.0.0 (Roslyn)")]
+        [Benchmark(Description = $"Mapster {TestAdaptHelper.MapsterVersion} (Roslyn)")]
         public void RoslynTest()
         {
             TestAdaptHelper.TestMapsterAdapter<Foo, Foo>(_fooInstance, Iterations);
         }
 
-        [Benchmark(Description = "Mapster 6.0.0 (FEC)")]
+        [Benchmark(Description = $"Mapster {TestAdaptHelper.MapsterVersion} (FEC)")]
         public void FecTest()
         {
             TestAdaptHelper.TestMapsterAdapter<Foo, Foo>(_fooInstance, Iterations);
@@ -40,11 +40,11 @@ namespace Benchmark.Benchmarks
             TestAdaptHelper.TestExpressMapper<Foo, Foo>(_fooInstance, Iterations);
         }
 
-        [Benchmark]
-        public void AutoMapperTest()
-        {
-            TestAdaptHelper.TestAutoMapper<Foo, Foo>(_fooInstance, Iterations);
-        }
+        //[Benchmark]
+        //public void AutoMapperTest()
+        //{
+        //    TestAdaptHelper.TestAutoMapper<Foo, Foo>(_fooInstance, Iterations);
+        //}
 
 
         [GlobalSetup(Target = nameof(MapsterTest))]
@@ -82,11 +82,11 @@ namespace Benchmark.Benchmarks
             TestAdaptHelper.ConfigureExpressMapper(_fooInstance);
         }
 
-        [GlobalSetup(Target = nameof(AutoMapperTest))]
-        public void SetupAutoMapper()
-        {
-            _fooInstance = TestAdaptHelper.SetupFooInstance();
-            TestAdaptHelper.ConfigureAutoMapper(_fooInstance);
-        }
+        //[GlobalSetup(Target = nameof(AutoMapperTest))]
+        //public void SetupAutoMapper()
+        //{
+        //    _fooInstance = TestAdaptHelper.SetupFooInstance();
+        //    TestAdaptHelper.ConfigureAutoMapper(_fooInstance);
+        //}
     }
 }

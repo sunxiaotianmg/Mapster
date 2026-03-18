@@ -11,47 +11,47 @@ namespace Benchmark.Benchmarks
         [Params(100_000)]//, 1_000_000)]
         public int Iterations { get; set; }
 
-        [Benchmark(Description = "Mapster 7.2.0")]
+        [Benchmark(Description = $"Mapster {TestAdaptHelper.MapsterVersion}")]
         public void MapsterTest()
         {
             TestAdaptHelper.TestMapsterAdapter<Foo, Foo>(_fooInstance, Iterations);
             TestAdaptHelper.TestMapsterAdapter<Customer, CustomerDTO>(_customerInstance, Iterations);
         }
 
-        [Benchmark(Description = "Mapster 7.2.0 (Roslyn)")]
+        [Benchmark(Description = $"Mapster {TestAdaptHelper.MapsterVersion} (Roslyn)")]
         public void RoslynTest()
         {
             TestAdaptHelper.TestMapsterAdapter<Foo, Foo>(_fooInstance, Iterations);
             TestAdaptHelper.TestMapsterAdapter<Customer, CustomerDTO>(_customerInstance, Iterations);
         }
 
-        [Benchmark(Description = "Mapster 7.2.0 (FEC)")]
+        [Benchmark(Description = $"Mapster {TestAdaptHelper.MapsterVersion} (FEC)")]
         public void FecTest()
         {
             TestAdaptHelper.TestMapsterAdapter<Foo, Foo>(_fooInstance, Iterations);
             TestAdaptHelper.TestMapsterAdapter<Customer, CustomerDTO>(_customerInstance, Iterations);
         }
 
-        [Benchmark(Description = "Mapster 7.2.0 (Codegen)")]
+        [Benchmark(Description = $"Mapster {TestAdaptHelper.MapsterVersion} (Codegen)")]
         public void CodegenTest()
         {
             TestAdaptHelper.TestCodeGen(_fooInstance, Iterations);
             TestAdaptHelper.TestCodeGen(_customerInstance, Iterations);
         }
 
-        [Benchmark(Description = "ExpressMapper 1.9.1")]
+        [Benchmark(Description = $"ExpressMapper {TestAdaptHelper.ExpressionMapperVersion}")]
         public void ExpressMapperTest()
         {
             TestAdaptHelper.TestExpressMapper<Foo, Foo>(_fooInstance, Iterations);
             TestAdaptHelper.TestExpressMapper<Customer, CustomerDTO>(_customerInstance, Iterations);
         }
 
-        [Benchmark(Description = "AutoMapper 10.1.1")]
-        public void AutoMapperTest()
-        {
-            TestAdaptHelper.TestAutoMapper<Foo, Foo>(_fooInstance, Iterations);
-            TestAdaptHelper.TestAutoMapper<Customer, CustomerDTO>(_customerInstance, Iterations);
-        }
+        //[Benchmark(Description = $"AutoMapper {TestAdaptHelper.AutoMapperVersion}")]
+        //public void AutoMapperTest()
+        //{
+        //    TestAdaptHelper.TestAutoMapper<Foo, Foo>(_fooInstance, Iterations);
+        //    TestAdaptHelper.TestAutoMapper<Customer, CustomerDTO>(_customerInstance, Iterations);
+        //}
 
         [GlobalSetup(Target = nameof(MapsterTest))]
         public void SetupMapster()
@@ -98,14 +98,14 @@ namespace Benchmark.Benchmarks
             TestAdaptHelper.ConfigureExpressMapper(_customerInstance);
         }
 
-        [GlobalSetup(Target = nameof(AutoMapperTest))]
-        public void SetupAutoMapper()
-        {
-            _fooInstance = TestAdaptHelper.SetupFooInstance();
-            _customerInstance = TestAdaptHelper.SetupCustomerInstance();
-            TestAdaptHelper.ConfigureAutoMapper(_fooInstance);
-            TestAdaptHelper.ConfigureAutoMapper(_customerInstance);
-        }
+        //[GlobalSetup(Target = nameof(AutoMapperTest))]
+        //public void SetupAutoMapper()
+        //{
+        //    _fooInstance = TestAdaptHelper.SetupFooInstance();
+        //    _customerInstance = TestAdaptHelper.SetupCustomerInstance();
+        //    TestAdaptHelper.ConfigureAutoMapper(_fooInstance);
+        //    TestAdaptHelper.ConfigureAutoMapper(_customerInstance);
+        //}
 
     }
 }

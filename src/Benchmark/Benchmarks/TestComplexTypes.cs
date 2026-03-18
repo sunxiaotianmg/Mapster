@@ -16,13 +16,13 @@ namespace Benchmark.Benchmarks
             TestAdaptHelper.TestMapsterAdapter<Customer, CustomerDTO>(_customerInstance, Iterations);
         }
         
-        [Benchmark(Description = "Mapster 6.0.0 (Roslyn)")]
+        [Benchmark(Description = $"Mapster {TestAdaptHelper.MapsterVersion} (Roslyn)")]
         public void RoslynTest()
         {
             TestAdaptHelper.TestMapsterAdapter<Customer, CustomerDTO>(_customerInstance, Iterations);
         }
 
-        [Benchmark(Description = "Mapster 6.0.0 (FEC)")]
+        [Benchmark(Description = $"Mapster {TestAdaptHelper.MapsterVersion} (FEC)")]
         public void FecTest()
         {
             TestAdaptHelper.TestMapsterAdapter<Customer, CustomerDTO>(_customerInstance, Iterations);
@@ -40,11 +40,11 @@ namespace Benchmark.Benchmarks
             TestAdaptHelper.TestExpressMapper<Customer, CustomerDTO>(_customerInstance, Iterations);
         }
 
-        [Benchmark]
-        public void AutoMapperTest()
-        {
-            TestAdaptHelper.TestAutoMapper<Customer, CustomerDTO>(_customerInstance, Iterations);
-        }
+        //[Benchmark]
+        //public void AutoMapperTest()
+        //{
+        //    TestAdaptHelper.TestAutoMapper<Customer, CustomerDTO>(_customerInstance, Iterations);
+        //}
 
         [GlobalSetup(Target = nameof(MapsterTest))]
         public void SetupMapster()
@@ -81,11 +81,11 @@ namespace Benchmark.Benchmarks
             TestAdaptHelper.ConfigureExpressMapper(_customerInstance);
         }
 
-        [GlobalSetup(Target = nameof(AutoMapperTest))]
-        public void SetupAutoMapper()
-        {
-            _customerInstance = TestAdaptHelper.SetupCustomerInstance();
-            TestAdaptHelper.ConfigureAutoMapper(_customerInstance);
-        }
+        //[GlobalSetup(Target = nameof(AutoMapperTest))]
+        //public void SetupAutoMapper()
+        //{
+        //    _customerInstance = TestAdaptHelper.SetupCustomerInstance();
+        //    TestAdaptHelper.ConfigureAutoMapper(_customerInstance);
+        //}
     }
 }
